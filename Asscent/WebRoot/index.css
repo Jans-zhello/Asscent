@@ -1,0 +1,326 @@
+    #container{
+       width: 800px;
+       margin: 0px auto;
+    }
+    #please{
+     text-align:center;
+     font-size:18px;
+     height:300px;
+    }
+    #aboutUS{
+     font-size:22px;
+     background-color:gray;
+    }
+  	#header{
+        height: 135px;
+		background:#3366ff;
+    }
+    #header img{
+        width: 200px;
+        height: 110px;
+        float:left;
+    }
+    #nav li{
+        width: 115px;
+        margin-left:0px;
+        float: left;
+    }
+    #firstpage a{
+       background-color:yellow;
+    }
+    #nav a{
+        font-size: 16px;
+        font-family: "新宋体";
+        color: black;
+        text-align: center;
+        display: block;
+        width: 114px;
+        height: 25px;
+        border-right:1px solid white;
+    }
+    #nav a:hover{
+        background: red;/* link->visited->hover->active*/
+    }
+    #banner img{
+        width: 800px;
+        height: 110px;
+        margin-top:0px;
+    }
+    #main{
+        width: 800px;
+        height: 479px;  
+    }
+    #lside{
+      width: 590px;
+      border: 1px solid gray;
+      background:gray;
+      float: left;
+    }
+    #rside{
+       width:205px;
+       height: 300px;
+       background: gray; 
+       float:right;
+    }
+    #info{
+      height:200px;
+    }
+    #info a {
+      margin-left:60px;
+      display: block; 
+      margin-top:9px;
+      width:85px;
+      height:18px;
+    }
+    #info a:hover{
+      background:orange;
+    }
+    #subtitle{
+      height: 28px;
+      background: white;
+    }
+    #subtitle h1{
+      font-size:16px;
+      margin-top: 5px;
+      margin-left: 5px;
+      text-align: center;
+      float: left;
+    }
+    #subtitle a{
+      font-size:15px;
+      margin-top:5px;
+      float:right;
+      color:red;
+    }
+    #subtitle img{
+      float: left;
+    }
+    #login{
+      height:130px;
+      margin-left:10px;
+      padding-top:15px;
+    }
+    #row a{
+     margin-left:15px;
+    
+    }
+    #contact{
+      height: 27px;
+      margin-top: 105px;
+      background: white;
+    }
+    #contact2{
+      height: 27px;
+      background: white;
+    }
+    #contact h1{
+      float:left;
+      margin-left:5px;
+      margin-top:5px;
+      font-size:17px;
+    }
+    #contact img{
+     float:left;
+    }
+    #content{
+      height: 140px;
+      padding-left: 10px;
+      background: gray;
+      font-size: 15px;
+      padding-top: 33px;
+    }
+    #content2{
+      height: 180px;
+      padding-left: 10px;
+      background: gray;
+      font-size: 15px;
+      padding-top: 33px;
+    }
+   .subtitle{
+      height: 28px;
+      background:white;
+    }
+   .subtitle img{
+      float: left;
+    }
+    .subtitle h1{
+      float: left;  
+      margin-left: 6px;
+      font-size: 15px;
+      margin-top: 4px;
+      text-align: center;
+    }
+    .subtitle a{
+      float: right;
+      margin-top: 3px;
+      text-align: center;
+    }
+    .four{
+      width: 220px;
+      height:180px;
+      background:#CCCCCC;
+      margin: 22px;
+      float: left;
+    }
+    .four h2{
+      padding-top: 5px;
+      margin-left: 5px;
+    }
+    .four img{
+      float: left;
+      padding-top: 20px;
+      margin-left: 10px;
+      width: 130px;
+      height: 100px;
+    }
+    .four ul{
+      float: right;
+      margin-right: 15px;
+    }
+    .four li{
+      height: 30px;
+    }
+    .four a:hover{
+      background:red;
+    }
+    #footer{
+        height:120px;
+        background: #ddaadd;
+    }
+    #footer ul{
+      height: 45px;
+    }
+    #footer li{
+      height: 22px;
+      float: left;
+      margin-left: 10px;
+      margin-top: 10px;
+      border-right: 1px solid white;
+    }
+    #footer a:hover{
+     background: #33BBff;
+    }
+    #footer address{
+      margin-left: 5px;
+    }
+    #register_page{
+     padding-top: 25px;
+     padding-left:240px;
+     height:280px;
+    }
+    #title{ 
+     height:50px;
+     width:800px;
+     margin-left:255px;
+     background:#bbeeaa;
+    }
+    #turnleft{
+     float:left;
+    }
+    #turnright{
+     float:right;
+    }
+    .msg{
+    font-size:18px;
+    }
+    .msg h1{
+     float:right; 
+    }
+    .msg a{
+     text-align:center;
+     margin :12px;
+    }
+    #left{ 
+     height:429px;
+     width:120px;
+     margin-left:255px;
+     float: left;
+     background-color:#808069;
+    }
+    #right{
+     margin-left:375px;
+     height:437px;
+     width:680px;
+     background-color:white;
+    }
+    .catalog p{
+     margin-top:5px;
+     font-size:16px;
+     color:black;
+    }
+    .catalog li{
+      margin-left:10px;
+      padding-top:25px;
+    }
+    .new{
+       padding-left:250px;
+       font-size:16px;
+       color:black;
+    }
+    .description{
+     float:left;
+     padding-left:38px;
+     margin-top:15px;
+    }
+    .account{
+      font-size:15px;
+      margin-left:20px;
+      padding:30px;
+    }
+    #admintitle{
+     width:800px;
+     height:22px;
+     float:left;
+     font-size:16px;
+     background-color:white;
+    }
+    #admintitle a{
+     float:right;
+     margin-right:620px;
+    }
+    #adminauthority{
+     float:left;
+     width:123px;
+     background-color:gray;
+     padding-top:10px;
+    }
+    #adminauthority a{
+      font-size:17px;
+      margin-left:25px;
+    }
+    #admincontent{
+        width: 800px;
+        height: 300px;  
+    }
+    #adminview{
+      width:677px;
+      float:right;
+    }
+    #operation{
+     float:right;
+    }
+    .operationleft{
+      float:left;
+      margin-top:15px;
+      margin-left:20px;
+    }
+    .operationright{
+      float:right;
+      margin-top:15px;
+      margin-right:60px;
+    }
+    .operationunique{
+       float:left;
+       margin-left:10px;
+       margin-top:15px;
+    }
+    #vieworder{
+     float:left;
+     margin-left:15px;
+     margin-top:15px;
+    }
+    #operateleft{
+     float:left;
+     margin-left:35px;
+     margin-top:10px;
+    }

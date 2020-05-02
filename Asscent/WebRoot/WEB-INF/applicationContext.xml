@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/ascent">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="648042475"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>org/model/User.hbm.xml</value>
+				<value>org/model/Drug.hbm.xml</value>
+				<value>org/model/Drugcatalog.hbm.xml</value>
+				<value>org/model/Orderdrug.hbm.xml</value>
+				<value>org/model/Orderitemdrug.hbm.xml</value>
+			</list>
+		</property>
+		</bean>
+	<bean id="userDAO" class="org.dao.UserDAO">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="userService"
+		class="org.service.UserService">
+		<property name="userDAO">
+			<ref bean="userDAO" />
+		</property>
+	</bean>
+	<bean id="drugcatalogDAO" class="org.dao.DrugcatalogDAO">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="drugcatalogService"
+		class="org.service.DrugcatalogService">
+		<property name="drugcatalogDAO">
+			<ref bean="drugcatalogDAO"/>
+		</property>
+	</bean>
+	<bean id="drugDAO" class="org.dao.DrugDAO">
+    <property name="sessionFactory" ref="sessionFactory"></property>	
+	</bean>
+	<bean id="drugService"
+		class="org.service.DrugService">
+		<property name="drugDAO">
+			<ref bean="drugDAO" />
+		</property>
+	</bean>
+    <bean id="orderdrugDAO" class="org.dao.OrderdrugDAO">
+    <property name="sessionFactory" ref="sessionFactory"></property>	
+	</bean>
+	<bean id="orderdrugService"
+		class="org.service.OrderdrugService">
+		<property name="orderdrugDAO">
+			<ref bean="orderdrugDAO"/>
+		</property>
+	</bean>
+	<bean id="orderitemdrugDAO" class="org.dao.OrderitemdrugDAO">
+    <property name="sessionFactory" ref="sessionFactory"></property>	
+	</bean>
+	<bean id="orderitemdrugService"
+		class="org.service.OrderitemdrugService">
+		<property name="orderitemdrugDAO">
+			<ref bean="orderitemdrugDAO"/>
+		</property>
+	</bean>
+	<bean id="registerAction" class="org.action.RegisterAction">
+		<property name="userService">
+			<ref bean="userService" />
+		</property>
+	</bean>
+    <bean id="loginAction" class="org.action.LoginAction">
+		<property name="userService">
+			<ref bean="userService" />
+		</property>
+	</bean>
+	<bean id="loginoutAction" class="org.action.LoginoutAction">
+		<property name="userService">
+			<ref bean="userService" />
+		</property>
+	</bean>
+    <bean id="browsecatalogAction" class="org.action.BrowseCatalogAction">
+      <property name="drugcatalogService">
+			<ref bean="drugcatalogService"/>
+	  </property>
+	</bean>
+	<bean id="newdrugAction" class="org.action.NewDrugAction">
+	<property name="drugService">
+	       <ref bean="drugService"/>
+	</property>
+	</bean>
+	<bean id="browsedrugpagingAction" class="org.action.BrowseDrugPagingAction">
+	<property name="drugService">
+	       <ref bean="drugService"/>
+	</property>
+	</bean>
+    <bean id="searchdrugAction" class="org.action.SearchDrugAction">
+	<property name="drugService">
+	  <ref bean="drugService"/>
+	</property>
+	</bean>
+	<bean id="addtocartAction" class="org.action.AddToCartAction">
+	<property name="drugService">
+	  <ref bean="drugService"/>
+	</property>
+	</bean>
+	<bean id="opencartAction" class="org.action.OpenCartAction">
+	<property name="drugService">
+	  <ref bean="drugService"/>
+	</property>
+	</bean>
+	<bean id="checkoutAction" class="org.action.CheckOutAction">
+	<property name="orderdrugService">
+	  <ref bean="orderdrugService"/>
+	</property>
+	</bean>
+    <bean id="orderlistAction" class="org.action.OrderListAction">
+	<property name="orderitemdrugService">
+	  <ref bean="orderitemdrugService"/>
+	</property>
+	</bean>
+	<bean id="orderlistinfoAction" class="org.action.OrderListInfoAction">
+	<property name="orderitemdrugService">
+	  <ref bean="orderitemdrugService"/>
+	</property>
+	</bean>
+	<bean id="orderlistdelAction" class="org.action.OrderListDelAction">
+	<property name="orderitemdrugService">
+	  <ref bean="orderitemdrugService"/>
+	</property>
+	</bean>
+    <bean id="ordersearchAction" class="org.action.OrderSearchAction">
+	<property name="orderitemdrugService">
+	  <ref bean="orderitemdrugService"/>
+	</property>
+	</bean>
+	<bean id="orderaddAction" class="org.action.OrderAddAction">
+	<property name="orderdrugService">
+	  <ref bean="orderdrugService"/>
+	</property>
+	</bean>
+    <bean id="userlistAction" class="org.action.UserListAction">
+	<property name="userService">
+	  <ref bean="userService"/>
+	</property>
+	</bean>
+	<bean id="usersearchAction" class="org.action.UserSearchAction">
+	<property name="userService">
+	  <ref bean="userService"/>
+	</property>
+	</bean>
+	<bean id="userlistdelAction" class="org.action.UserListDelAction">
+	<property name="userService">
+	  <ref bean="userService"/>
+	</property>
+	</bean>
+	<bean id="druglistAction" class="org.action.DrugListAction">
+	<property name="drugService">
+	  <ref bean="drugService"/>
+	</property>
+	</bean>
+	<bean id="druglistdelAction" class="org.action.DrugListDelAction">
+	<property name="drugService">
+	  <ref bean="drugService"/>
+	</property>
+	</bean>
+	<bean id="drugsearchAction" class="org.action.DrugSearchAction">
+	<property name="drugService">
+	  <ref bean="drugService"/>
+	</property>
+	</bean>
+	<bean id="drugaddAction" class="org.action.DrugAddAction">
+	<property name="drugService">
+	  <ref bean="drugService"/>
+	</property>
+	</bean>
+    </beans>

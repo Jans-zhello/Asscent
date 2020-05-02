@@ -1,0 +1,82 @@
+<!DOCTYPE struts PUBLIC
+     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+     "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.i18n.encoding" value="GBK"/>
+	<include file="struts-default.xml"/>
+	<package name="default" extends="struts-default" namespace="/">
+		<action name="register" class="org.action.RegisterAction">
+			<result name="success">/Register_OK.jsp</result>
+			<result name="input">/Register.jsp</result>
+		</action>
+		<action name="login" class="org.action.LoginAction">
+		    <result name="admin">/admin/admin.jsp</result>
+			<result name="success">/login_success.jsp</result>
+			<result name="error">/login_failure.jsp</result>
+			<result name="input">/login_failure.jsp</result>
+		</action>
+		<action name="loginout" class="org.action.LoginoutAction">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="browsecatalog" class="org.action.BrowseCatalogAction">
+			<result name="success">/menu_1.jsp</result>
+		</action>
+		<action name="newdrug" class="org.action.NewDrugAction">
+			<result name="success">/menu_2.jsp</result>
+		</action>
+		<action name="browsedrugpaging" class="org.action.BrowseDrugPagingAction">
+			<result name="success">/menu_3.jsp</result>
+		</action>
+		<action name="searchdrug" class="org.action.SearchDrugAction">
+			<result name="success">/search_result.jsp</result>
+		</action>
+		<action name="addtocart" class="org.action.AddToCartAction">
+			<result name="success">/addtocart.jsp</result>
+		</action>
+		<action name="opencart" class="org.action.OpenCartAction">
+			<result name="success">/showcart.jsp</result>
+		</action>
+		<action name="checkout" class="org.action.CheckOutAction">
+			<result name="success">/order_success.jsp</result>
+		</action>
+		<action name="orderlist" class="org.action.OrderListAction">
+			<result name="success">/admin/orderlist.jsp</result>
+		</action>
+		<action name="orderlistinfo" class="org.action.OrderListInfoAction">
+			<result name="success">/admin/orderlistinfo.jsp</result>
+		</action>
+		<action name="orderlistdel" class="org.action.OrderListDelAction">
+			<result name="success" type="chain">orderlist</result>
+		</action>
+	    <action name="ordersearch" class="org.action.OrderSearchAction">
+			<result name="success">/admin/ordersearch_result.jsp</result>
+		</action>
+		<action name="orderadd" class="org.action.OrderAddAction">
+			<result name="success">/admin/orderadd_result.jsp</result>
+		</action>
+		<action name="userlist" class="org.action.UserListAction">
+			<result name="success">/admin/userlist.jsp</result>
+		</action>
+		<action name="usersearch" class="org.action.UserSearchAction">
+			<result name="success">/admin/usersearch_result.jsp</result>
+		</action>
+		<action name="userlistdel" class="org.action.UserListDelAction">
+			<result name="success" type="chain">userlist</result>
+		</action>
+		<action name="useradd" class="org.action.UserListAddAction">
+			<result name="success" >/admin/useradd_result.jsp</result>
+		</action>
+		<action name="druglist" class="org.action.DrugListAction">
+			<result name="success" >/admin/druglist.jsp</result>
+		</action>
+		<action name="druglistdel" class="org.action.DrugListDelAction">
+			<result name="success" type="chain">druglist</result>
+		</action>
+		<action name="drugsearch" class="org.action.DrugSearchAction">
+			<result name="success">/admin/drugsearch_result.jsp</result>
+		</action>
+		<action name="drugadd" class="org.action.DrugAddAction">
+			<result name="success">/admin/drugadd_result.jsp</result>
+		</action>
+	</package>
+</struts>
